@@ -50,7 +50,7 @@ function extractFromBuffer({
 
   var markersArr = getMarkersArrayFromBuffer({ buffer, filename, duration });
 
-  console.log("markersAfter", JSON.stringify(markersArr));
+  //console.log("markersAfter", JSON.stringify(markersArr));
 
   const noMarkersFound = markersArr.length == 0;
 
@@ -78,7 +78,7 @@ function extractFromBuffer({
   }
   var firstm = newMarkers[0];
   if (firstm.sourcetime > 0) {
-    console.log("FirstMarker", JSON.stringify(firstm), "\n");
+    //console.log("FirstMarker", JSON.stringify(firstm), "\n");
 
     var firstSpeed = firstm.bpm / 60000;
     var info2 = {
@@ -195,7 +195,7 @@ export default function extractWarpMarkers(path, duration, samprate) {
 const analyseAudio = async path => {
   const { format } = await parseFile(path);
   const { sampleRate, duration } = format;
-  console.log(await extractWarpMarkers(path, duration, sampleRate));
+  console.log((await extractWarpMarkers(path, duration, sampleRate)).warpMarkers);
 };
 
 // console.log(process.argv)
