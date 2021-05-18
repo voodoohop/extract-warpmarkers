@@ -1,9 +1,8 @@
 
 import fs from "fs";
-import lodash from "lodash";
+import { last }  from "lodash-es";
 import { parseFile } from 'music-metadata';
 
-const {last} = lodash;
 
 var post = () => null; //console.log.bind(console);
 
